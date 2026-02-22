@@ -41,8 +41,9 @@ The code is organized to demonstrate Python fundamentals:
 
 ```
 .
-├── index.py    # Main application
-├── my.py       # Additional module
+├── index.py    # Initial version
+├── index2.py   # Has lots logs to monitor the behavior and how it works step by step
+├── index3.py   # Rewrite the code for readability, performance, reusability, testability, and maintainability.
 └── README.md   # This file
 ```
 # Text_Based_Banking_And_Utility_System
