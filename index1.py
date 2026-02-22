@@ -19,15 +19,26 @@ def get_user_info():
     """
     # Python Variables and Data Types
     name = input("Enter your name: ")  # str
+    print(f"LOGGER 1 : name: {name}")
 
     while True:
         balance_str = input("Enter starting balance (e.g. 100.50): ")
+        print(f"LOGGER 2 - name: {name}, balance_str: {balance_str}")
+
         try:
             # Python Casting: string -> float
             balance = float(balance_str)
-            break
+            print(f"LOGGER 3 - balance: {balance}")
         except ValueError:
             print("Please provide a valid number.")
+
+
+        if balance <= 0:
+            print("Starting balance must be a positive number.")
+        else:
+            break
+
+    print(f"LOGGER 4 - name: {name}, balance_str: {balance}")
     return name, balance
 
 
@@ -149,22 +160,31 @@ def confirm_exit():
 
 def main():
     name, balance = get_user_info()
+    print(f"LOGGER 5 - name: {name}, balance_str: {balance}")
+
     transactions = []  # list of tuples (type, amount)
+    print(f"LOGGER 6 - transactions: {transactions}")
 
     while True:  # while loop for the menu
         choice = display_menu()
+        print(f"LOGGER 7 - choice: {choice}, transactions: {transactions}")
 
         if choice == "1":
             print(f"\n{name}, your current balance is: ${balance:.2f}")
         elif choice == "2":
             balance = deposit(balance, transactions)
+            print(f"LOGGER 8 - deposit balance: {balance}, transactions: {transactions}")
         elif choice == "3":
             balance = withdraw(balance, transactions)
+            print(f"LOGGER 9 - withdraw balance: {balance}, transactions: {transactions}")
         elif choice == "4":
+            print(f"LOGGER 10 - summary transactions: {transactions}")
             summary(transactions)
         elif choice == "5":
+            print(f"LOGGER 11 - interest_projection transactions: {transactions}")
             interest_projection(balance)
         elif choice == "6":
+            print(f"LOGGER 12 - confirm_exit: {confirm_exit()}")
             if confirm_exit():
                 print("Goodbye!")
                 break
