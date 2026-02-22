@@ -41,8 +41,8 @@ The code is organized to demonstrate Python fundamentals:
 
 ```
 .
-├── index.py    # Initial version
-├── index2.py   # Has lots logs to monitor the behavior and how it works step by step
+├── index.py    # Initial version.
+├── index2.py   # Includes extensive logs to monitor system behavior and track how it works step by step.
 ├── index3.py   # Rewrite the code for readability, performance, reusability, testability, and maintainability.
 └── README.md   # This file
 ```
